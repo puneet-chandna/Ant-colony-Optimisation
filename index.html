@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACO Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Ant Colony Optimization Simulator</h1>
+    <p>Explore how ants find the shortest path using ACO</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Input Parameters</h2>
+    <form id="aco-form">
+      <label for="numCities">Number of Cities:</label>
+      <input type="number" id="numCities" min="2" required>
+      
+      <label for="numAnts">Number of Ants:</label>
+      <input type="number" id="numAnts" min="1" required>
+      
+      <label for="maxIterations">Max Iterations:</label>
+      <input type="number" id="maxIterations" min="1" required>
+      
+      <label for="alpha">Pheromone Importance (ALPHA):</label>
+      <input type="number" step="0.1" id="alpha" required>
+      
+      <label for="beta">Heuristic Importance (BETA):</label>
+      <input type="number" step="0.1" id="beta" required>
+      
+      <label for="evaporation">Pheromone Evaporation Rate (EVAPORATION):</label>
+      <input type="number" step="0.1" id="evaporation" required>
+      
+      <label for="pheromoneDeposit">Pheromone Deposit Factor (Q):</label>
+      <input type="number" step="0.1" id="pheromoneDeposit" required>
+      
+      <h3>Distance Matrix</h3>
+      <div id="distanceMatrix"></div>
+      
+      <button type="button" id="runButton">Run ACO</button>
+    </form>
+  </section>
+
+  <section class="results-section">
+    <h2>Results</h2>
+    <div id="liveResults">
+      <p><strong>Best Distance:</strong> <span id="bestDistance">N/A</span></p>
+      <p><strong>Best Tour:</strong> <span id="bestTour">N/A</span></p>
+    </div>
+    
+    <div id="iterationResults">
+      <h3>Iteration Results</h3>
+      <ul id="iterationsList"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 ACO Simulator</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
